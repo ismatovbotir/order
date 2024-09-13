@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('auth');
 
+Route::get('/order', function () {
+    return Auth::user();
+})->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
